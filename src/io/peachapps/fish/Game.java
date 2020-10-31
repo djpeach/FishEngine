@@ -72,9 +72,17 @@ public class Game extends Canvas implements Runnable {
             return;
         }
 
+        screen.clear();
+        screen.render();
+
+        for (int i = 0; i < pixels.length; i++) {
+            pixels[i] = screen.pixels[i];
+        }
+
         Graphics graphics = bufferStrategy.getDrawGraphics();
         graphics.setColor(new Color(40, 80, 70));
         graphics.fillRect(0, 0, getWidth(), getHeight());
+        graphics.drawImage(bufferedImage, 0, 0, getWidth(), getHeight(), null);
         graphics.dispose();
 
         bufferStrategy.show();
@@ -82,9 +90,35 @@ public class Game extends Canvas implements Runnable {
 
     @Override
     public void run() {
+        //before game starts
+        long lastTickTime = System.nanoTime();
+        long oneSecondTimer = System.currentTimeMillis();
+        final double nanoSeconds = 1_000_000_000 / 60.0;
+        double delta = 0;
+        int updates = 0;
+        int frames = 0;
+
+        // run game
         while (running) {
-            update();
+            long now = System.nanoTime();
+            delta += (now - lastTickTime) / nanoSeconds;
+            lastTickTime = now;
+            while (delta >= 1) {
+                update();
+                updates++;
+                delta--;
+            }
             render();
+            frames++;
+
+            while (System.currentTimeMillis() - oneSecondTimer > 1000) {
+                frame.setTitle("Fish | " + updates + " ups, " + frames + " fps.");
+                oneSecondTimer += 1000;
+                updates = 0;
+                frames = 0;
+            }
         }
+
+        // after game closes
     }
 }
