@@ -1,22 +1,20 @@
-# Graphics Module
+# Implementations
 
-The engine will include a module to handle all things related to graphics.
+We are going to start to actually use our code now.
 
-## Screen Class
+## Tiles
 
-The screen class will be responsible for managing the pixels to be rendered.
+To get some stuff on the screen and demo our system, we will render a map of tiles with random colors.
+We will create an array of random colors a given rowCount tall and colCount wide.
 
-We will create a render method to loop over our pixels and make any changes. The screen class's pixels can be used by other classes to display them.
+In our render loop, we then determine what tile the current pixel is over, and use that tile's color to draw to the screen.
 
-## Update Timer
+## Camera Movement
 
-To lock our update loop at 60 times per second, we need to find the current time minus the last time the loop ran. This is called our delta.
-If our delta is greater than a 1/60th of a second, we can run the update loop. In order to deal with lags and cpus faster than this, we increase delta by 
-the current time less the last time. Then we run a while loop for every 1/60th of a second of delta, decrementing delta as we do, until it is < 1/60th of a second.
+To move our "Camera", we need to change the offset of the pixels we are drawing. 
+For demo purposes, we do this by passing the offset into the render method.
+We then use those offsets to determine what color each pixel should be. 
 
-## FPS Timer
-
-To calculate fps, we just count the updates and frames and once ever second, rest them and post them to the screen.
-
-
+The pixels are all the same, they don't move. 
+But the visual illusion is that the areas they are drawn to change since we change what color they should be via the offset.
 

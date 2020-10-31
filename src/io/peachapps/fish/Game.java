@@ -22,6 +22,7 @@ public class Game extends Canvas implements Runnable {
 
     private BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) bufferedImage.getRaster().getDataBuffer()).getData();
+    private int x, y = 0;
 
     public Game() {
         Dimension size = new Dimension(width * scale, height * scale);
@@ -63,6 +64,7 @@ public class Game extends Canvas implements Runnable {
 
     // lock at 60 fps
     public void update() {
+        x++; y++;
     }
 
     public void render() {
@@ -73,7 +75,7 @@ public class Game extends Canvas implements Runnable {
         }
 
         screen.clear();
-        screen.render();
+        screen.render(x, y);
 
         for (int i = 0; i < pixels.length; i++) {
             pixels[i] = screen.pixels[i];
