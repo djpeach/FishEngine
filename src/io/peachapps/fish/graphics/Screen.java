@@ -39,7 +39,8 @@ public class Screen {
                 int tileIndex = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE; // faster to use bitwise shift for values of powers of two
                 int row = y*width;
                 int col = x;
-                pixels[col + row] = tiles[tileIndex];
+                int spriteMask = Sprite.grass.SIZE - 1;
+                pixels[col + row] = Sprite.grass.pixels[(x & spriteMask) + (y & spriteMask) * Sprite.grass.SIZE];
             }
         }
     }

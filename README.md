@@ -1,10 +1,15 @@
-# Input
+# Sprites
 
-We are going to start accepting some user input
+Now we will start to show images on the screen
 
-## Keyboard
+## SpriteSheet Class
 
-We create a class that implements KeyListener, and we create a typical array of boolean for keys, as well as some special members for up down left right.
-We then update this on every update and then can use the values to manipulate the objects on the canvas as well as the canvas itself in our game logic.
+First we create a sprite sheet class to load the image. This should be familiar, as we just load the image, and get the individual pixels and store them in a 1D array.
+We can then use these pixels later to determine what color we need to use in our Screen's render method
 
-Be sure to add a listener to our canvas.
+## Sprite Class
+
+For the sprite class, we do many of the same things that we do with the spritesheet class, but instead of loading an image, we use the sheet's image.
+We use the position of the sprite passed in to build a individual array of pixels for this given sprite from the sprite sheet.
+This way we do not have to load the sheet for every sprite, but only load it once and create all our sprites from it.
+
