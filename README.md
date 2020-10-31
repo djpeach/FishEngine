@@ -53,3 +53,13 @@ It is highly recommended to look at these for demo images and gifs.
     > This step showed how to accept keyboard input and use that to move the "camera" around an infinite map
 * [05 - sprites](https://github.com/djpeach/FishEngine/tree/05-sprites)
     > This step created the SpriteSheet and Sprite class and then ended by using them in the Screen class to draw a repeating background from a custom sprite
+
+## Notes and Future Plans
+
+I am enjoying the course I am following here: [Game Programming](https://www.youtube.com/playlist?list=PLlrATfBNZ98c-CeNT-q_Z7ox3R_eIkF98) 
+
+It is written by a professional game engine developer who worked for EA. It is a great change of pace to learn from a pro as opposed to just implementing what I think is best. 
+I feel I am learning a lot, and at the very least seeing implementations of things we do in class such as pixel manipulation and boolean array for input and such. 
+
+Right now I am following his implementations pretty strictly, but once I get further along, I plan to heavily modify the code or start from scratch with this as an example of important concepts and standards. 
+I then plan to use it to make some sort of game that I really want to be multiplayer if I can get to that point.
