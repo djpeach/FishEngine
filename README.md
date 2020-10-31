@@ -57,6 +57,12 @@ Graphics changes and objects to draw are created like any other "native" graphic
  The raster is the pixel representation of an image. In java.awt, it is a single dimensional array of pixels.
  We can use the raster to individually change, delete, and otherwise mutate the pixels that make up the image.
  
+ ## Demo
+ 
+ At this point, just a blank screen with a custom color. This is just a huge rect drawn by the AWT Graphics Module.
+ ![image](https://user-images.githubusercontent.com/31779571/97770307-6e59cf80-1b08-11eb-9839-726cd2765bdc.png)
+
+ 
  
 
 
