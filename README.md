@@ -18,5 +18,10 @@ the current time less the last time. Then we run a while loop for every 1/60th o
 
 To calculate fps, we just count the updates and frames and once ever second, rest them and post them to the screen.
 
+## Demo
+
+This time just a pink screen but instead of a large rect with the Graphics module, it is a pixel by pixel manipulation in the new Screen class. We turn the 1D array into proper x and y coordinates and turn all pixels pink.
+
+![image](https://user-images.githubusercontent.com/31779571/97770339-bd076980-1b08-11eb-86d2-dbef854d9977.png)
 
 
