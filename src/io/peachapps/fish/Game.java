@@ -1,6 +1,7 @@
 package io.peachapps.fish;
 
 import io.peachapps.fish.graphics.Screen;
+import io.peachapps.fish.input.Keyboard;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class Game extends Canvas implements Runnable {
     private volatile boolean running = false;
     private JFrame frame;
     private Screen screen;
+    private Keyboard keys;
 
     private BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) bufferedImage.getRaster().getDataBuffer()).getData();
@@ -29,8 +31,10 @@ public class Game extends Canvas implements Runnable {
         setPreferredSize(size);
 
         screen = new Screen(width, height);
-
+        keys = new Keyboard();
         frame = new JFrame();
+
+        addKeyListener(keys);
     }
 
     // synchronized protects shared resources across threads
@@ -64,7 +68,11 @@ public class Game extends Canvas implements Runnable {
 
     // lock at 60 fps
     public void update() {
-        x++; y++;
+        keys.update();
+        if (keys.up) y++;
+        if (keys.down) y--;
+        if (keys.left) x++;
+        if (keys.right) x--;
     }
 
     public void render() {

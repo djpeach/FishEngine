@@ -1,20 +1,10 @@
-# Implementations
+# Input
 
-We are going to start to actually use our code now.
+We are going to start accepting some user input
 
-## Tiles
+## Keyboard
 
-To get some stuff on the screen and demo our system, we will render a map of tiles with random colors.
-We will create an array of random colors a given rowCount tall and colCount wide.
+We create a class that implements KeyListener, and we create a typical array of boolean for keys, as well as some special members for up down left right.
+We then update this on every update and then can use the values to manipulate the objects on the canvas as well as the canvas itself in our game logic.
 
-In our render loop, we then determine what tile the current pixel is over, and use that tile's color to draw to the screen.
-
-## Camera Movement
-
-To move our "Camera", we need to change the offset of the pixels we are drawing. 
-For demo purposes, we do this by passing the offset into the render method.
-We then use those offsets to determine what color each pixel should be. 
-
-The pixels are all the same, they don't move. 
-But the visual illusion is that the areas they are drawn to change since we change what color they should be via the offset.
-
+Be sure to add a listener to our canvas.
