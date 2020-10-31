@@ -13,3 +13,8 @@ For the sprite class, we do many of the same things that we do with the spritesh
 We use the position of the sprite passed in to build a individual array of pixels for this given sprite from the sprite sheet.
 This way we do not have to load the sheet for every sprite, but only load it once and create all our sprites from it.
 
+## Demo
+
+This is a repeating background of a custom "grass" sprite. This uses the SpriteSheet class to load the image, the Sprite class to get the right pixels, and the Screen class to draw the tiles correctly.
+
+![image](https://user-images.githubusercontent.com/31779571/97770475-01473980-1b0a-11eb-909d-fc79e9d06159.png)
