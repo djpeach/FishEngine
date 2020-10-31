@@ -18,3 +18,9 @@ We then use those offsets to determine what color each pixel should be.
 The pixels are all the same, they don't move. 
 But the visual illusion is that the areas they are drawn to change since we change what color they should be via the offset.
 
+## Demo
+
+This is a looping 8 x 8 infinite tileset. The tiles are created via an array of random colors. The appropriate colors for each pixel are then determined when the Screen class needs to draw them. The movement is created by a constant x and y offset increase of 1 pixel every update iteration.
+
+![demo](https://user-images.githubusercontent.com/31779571/97770394-3d2dcf00-1b09-11eb-8a35-1be01bed2f65.gif)
+
