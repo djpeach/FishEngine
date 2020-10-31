@@ -63,3 +63,14 @@ I feel I am learning a lot, and at the very least seeing implementations of thin
 
 Right now I am following his implementations pretty strictly, but once I get further along, I plan to heavily modify the code or start from scratch with this as an example of important concepts and standards. 
 I then plan to use it to make some sort of game that I really want to be multiplayer if I can get to that point.
+
+## Run the engine
+
+If you want to run this:
+
+* clone it
+* compile the files
+* run it with JRE 1.8
+* if done manually you will need to add the res (resources) directory to your java build path before compiling.
+
+You can do this for any branch to test out the various features.
